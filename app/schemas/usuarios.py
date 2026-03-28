@@ -17,16 +17,7 @@ class Setusuario(BaseModel):
     nome: Optional[str] = Field('')
     ativo: int = Field(1)
 
-    model_config = ConfigDict(
-        from_attributes=True,
-        json_schema_extra={
-            "example": {
-                "id_usuario": 0,
-                "nome": "Fulano",
-                "ativo": 1
-            }
-        }
-    )
+    model_config = ConfigDict(from_attributes=True)
 
 class Editusuario(Setusuario):
     id_usuario: int = Field()
